@@ -1,0 +1,36 @@
+/* NavBar */
+#nomeLogo {
+    color: white;   
+    font-size: 26px;
+    font-weight: bold;
+    font-style: italic;
+    margin-left: 13px;
+}
+
+.navbar {
+    background-color: #FF9500;
+    height: 65px;    
+    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+}
+
+.btn-custom {
+    margin-right: 8px;
+    background-color: #405380;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 16px;
+    height: 40px;
+    border: none;
+    padding-left: 18px;
+    padding-right: 18px;
+    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+}
+
+.btn-custom:hover {
+    background-color: #303c58;
+    color: white;
+    border: none;
+    transform: scale(1.035);
+}
+

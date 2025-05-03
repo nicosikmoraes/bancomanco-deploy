@@ -1,0 +1,48 @@
+<div class="container-body">
+
+        <div class="imagem-container">
+            <picture>
+                <source srcset="" media="(max-width: 816)">
+                <source srcset="../../assets/images/image1013.png" media="(max-width: 1150px)">
+                <source srcset="../../assets/images/image1600.png" media="(max-width: 1600px)">
+            <img src="../../assets/images/image1.png" id="home-page-img" width="102%" height="100%">
+            </picture>
+        </div> 
+
+        <div class="content-container">
+
+           <div class="texto"> <h1>Banco Manco </h1>
+                  <h1 id="under-text"> Melhor banco para você </h1>
+           </div>
+
+           <div class="texto_2"> <h2>Entre e aproveite o melhor </h2>
+            <h2 id="under-text_2"> que tem no mercado </h2>
+
+            <div class="card">
+                <div class="card-body">
+                  <img src="../../assets/images/LogoBmBranco.png" style="display: inline-block;" id="imgLogoLogin">
+                  <h5 class="card-title" style="display: inline-block; vertical-align: middle;">Entre na sua conta</h5>
+                 
+                  <form class="form-card-login" #frm="ngForm"> <!-- ((ngSubmit)="" para chamar a função quando o botão for clicado) -->
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="inputCpf" placeholder="Cpf" mask="000.000.000-00">
+                                <label for="inputCpf">Digite seu CPF</label>
+                             </div>  
+
+                             <div class="form-floating" id="inputSenhaContainer">
+                                <input type="password" class="form-control" id="inputSenha" placeholder="Senha">
+                                <label for="inputSenha">Digite sua senha</label>
+                             </div>     
+                             
+                             <button class="btn btn-custom" type="submit">Entrar</button>
+                  </form>
+
+                </div>
+
+              </div>
+     </div>
+
+        </div>
+
+</div> <!-- Fim do container-body -->
+
