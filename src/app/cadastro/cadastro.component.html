@@ -1,0 +1,73 @@
+<div class="container-body">
+
+    <div class="imagem-container-cadastro">
+        <picture>
+            <source srcset="" media="(max-width: 1040px)">
+            <source srcset="../../assets/images/imageCadastro3.png" media="(max-width: 1360px)">
+            <source srcset="../../assets/images/imageCadastro2.png" media="(max-width: 1655px)">
+            <img src="../../assets/images/imageCadastro.png" id="cadastro-img" width="98%" height="100%">
+        </picture>
+    </div>
+
+    <div class="content-container">
+ 
+           <div class="texto"> <h1>Cadastre-se no </h1>
+              <h1 id="under-text"> Banco Manco </h1>
+           </div>  
+
+           <div class="formulario">
+
+                <form class="form-cadastro" #frmCadastro="ngForm" (ngSubmit)="adicionarCliente(frmCadastro)">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="name" placeholder="EX: Lara Lena"
+                                [(ngModel)]="cliente.nome" name="nome"
+                                required minlength="3" #nome="ngModel">
+                        <label for="name">Nome Completo</label>
+                        <!-- Mensagem de erro -->
+                        <div class="erro" *ngIf="nome.invalid && nome.touched">Nome inválido.</div>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="cpf" placeholder="EX: Lara Lena" mask="000.000.000-00"
+                               [(ngModel)]="cliente.cpf" name="setCpf"
+                               required minlength="11" #cpf="ngModel"> 
+                        <label for="cpf">Digite seu CPF</label>
+                        <!-- Mensagem de erro -->
+                        <div class="erro" *ngIf="cpf.invalid && cpf.touched">CPF inválido.</div>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="email" placeholder="EX: Lara Lena"
+                               [(ngModel)]="cliente.email" name="email"
+                               required email #email="ngModel">
+                        <label for="name">Digite seu Email</label>
+                        <!-- Mensagem de erro -->
+                        <div class="erro" *ngIf="email.invalid && email.touched">E-mail inválido.</div>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="dataNascimento" placeholder="EX: Lara Lena" mask="00/00/0000"
+                               [(ngModel)]="cliente.dataNascimento" name="dataNascimento" 
+                               required  minlength="8" #dataNascimento="ngModel"> 
+                        <label for="dataNascimento">Data de Nascimento</label>
+                        <!-- Mensagem de erro -->
+                        <div class="erro" *ngIf="dataNascimento.invalid && dataNascimento.touched">Data inválida.</div>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="senha" placeholder="EX: Lara Lena"
+                               [(ngModel)]="cliente.senha" name="setSenha" 
+                               required minlength="6" #senha="ngModel">
+                        <label for="senha">Digite sua Senha</label>
+                        <!-- Mensagem de erro -->
+                        <div class="erro" *ngIf="senha.invalid && senha.touched">Senha inválida.</div>
+                    </div>
+
+                    <button class="btn btn-custom" type="submit" [disabled]="!frmCadastro.valid">Cadastrar</button>
+                </form>
+
+           </div>
+
+    </div> <!-- content-container -->
+
+</div> <!-- container-body -->

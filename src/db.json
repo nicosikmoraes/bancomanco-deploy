@@ -1,0 +1,132 @@
+{
+  "clientes": [
+    {
+      "id": "c5b1fc2a-c526-4274-ab30-8d8d7dfb469d",
+      "nome": "2",
+      "cpf": "2",
+      "dataNascimento": "2",
+      "email": "2",
+      "senha": "2"
+    },
+    {
+      "id": "8262a1c7-ad1e-42a2-a9d0-d0cc515f9716",
+      "nome": "nico",
+      "cpf": "12",
+      "dataNascimento": "ss",
+      "email": "adaw",
+      "senha": "sdsa"
+    },
+    {
+      "id": "2c47a75d-4e5d-4daa-859e-3451fc444ecf",
+      "nome": "lara",
+      "cpf": "065650",
+      "dataNascimento": "lp´pç",
+      "email": "045054",
+      "senha": "-l-0ll"
+    },
+    {
+      "id": "fd55eda3-348d-4659-be89-0a8713566c24",
+      "nome": "nicolas",
+      "cpf": "07769384958",
+      "dataNascimento": "16052006",
+      "email": "nicolas.moraes.ns@gmail.com",
+      "senha": "n16052006!"
+    },
+    {
+      "id": "bf9e973d-42e8-4f91-9230-8c0f37bcec57",
+      "nome": "Nicty Suculento",
+      "cpf": "16516520220",
+      "dataNascimento": "10102000",
+      "email": "sucaslento@gmail.com",
+      "senha": "sucasoincrivel"
+    },
+    {
+      "id": "8a723d0c-8ae0-433d-97bc-1836718becf5",
+      "nome": "testeId",
+      "cpf": "12121212121",
+      "dataNascimento": "11212121",
+      "email": "id@gmail.com",
+      "senha": "1212123"
+    },
+    {
+      "id": "29492a1c-5dcc-4a97-89da-0bca0700f38e",
+      "nome": "dwadwadw",
+      "cpf": "31231231231",
+      "dataNascimento": "31123123",
+      "email": "dwasda@da",
+      "senha": "2131231"
+    },
+    {
+      "id": "7534ef26-cbab-458c-ac60-7fd79faf6b80",
+      "nome": "nicolas.moraes.ns@gmail.com",
+      "cpf": "21312312321",
+      "dataNascimento": "31123131",
+      "email": "nicolas.moraes.ns@gmail.com12",
+      "senha": "12321312"
+    },
+    {
+      "id": "bcfc8cdb-dbe2-4873-8fd0-aa0c6a33fd95",
+      "nome": "paranma1",
+      "cpf": "13131231231",
+      "dataNascimento": "16052006",
+      "email": "daw@dwadsad",
+      "senha": "wwwwwww"
+    },
+    {
+      "id": "9c2253ed-2d56-4a0b-a285-0348d1db0aec",
+      "nome": "macarrao",
+      "cpf": "21312321312",
+      "dataNascimento": "12109200",
+      "email": "macara@dawsad",
+      "senha": "2223232"
+    },
+    {
+      "id": "a2cfcaea-6d88-4f31-886f-ed2b6b025c22",
+      "nome": "suculento da lara",
+      "cpf": "12121212121",
+      "dataNascimento": "13232323",
+      "email": "nicolas.moraes.ns@gmail.com",
+      "senha": "dwasdaw"
+    },
+    {
+      "id": "b817a4c5-79fb-45d1-8c9a-2f5d4257f1ae",
+      "nome": "sucaslento",
+      "cpf": "12313213123",
+      "dataNascimento": "16052006",
+      "email": "nicolas.moraes.ns@gmail.com",
+      "senha": "dasdaw"
+    },
+    {
+      "id": "f9914a41-086f-4096-b8ae-6d18cf4f02a5",
+      "nome": "31231",
+      "cpf": "12121212121",
+      "dataNascimento": "16052006",
+      "email": "nicolas.moraes.ns@gmail.com",
+      "senha": "asdawdsa"
+    },
+    {
+      "id": "7ad610db-9844-49b4-8d64-35fcdf6b0d14",
+      "nome": "nictyfodemuito",
+      "cpf": "13213212132",
+      "dataNascimento": "16052006",
+      "email": "nicolas.moraes.ns@gmail.com",
+      "senha": "dawdsada"
+    },
+    {
+      "id": "e57feed2-b728-40c3-9d81-b61cef166015",
+      "nome": "sucleute",
+      "cpf": "12121212121",
+      "dataNascimento": "16052006",
+      "email": "nicolas.moraes.ns@gmail.com",
+      "senha": "asdasdsa"
+    },
+    {
+      "id": "ccd8627e-9d93-41e1-b6ec-d339b92172c5",
+      "nome": "suculento da lara",
+      "cpf": "12121212121",
+      "dataNascimento": "16052006",
+      "email": "nicolas.moraes.ns@gmail.com",
+      "senha": "jhjhhjhjjh"
+    }
+  ]
+}
