@@ -13,6 +13,14 @@
     background-color: #F5F2F2;
 }
 
+.container-right {
+    position: absolute;
+    right: 0;
+    width: 45%;
+    height: 100vh;
+    background-color: white;
+}
+
 /* Mensagem de boas vindas */
 #welcome-text{
     margin-top: 160px;
@@ -98,6 +106,58 @@ h3 {
     color: white;
     border: none;
     transform: scale(1.035);
+}
+
+/* Modal */
+.btn-modal {
+    background-color: #405380;
+    color: #fff;
+}
+
+.btn-modal:hover {
+    background-color: #303c58;
+    border: none;
+    transform: scale(1.035);
+}
+
+.texto-modal {
+    color: #405380;
+    font-weight: 600;
+}
+
+#input-modal:focus{
+    box-shadow: none;
+    outline: #405380 solid 1px;
+}
+
+.modal-body{
+    padding: 20px;
+}
+
+/* Container direita */
+.normal-button {
+    margin-top: 180px;
+    margin-left: 10vw;
+}
+
+.btn-orange {
+    background-color: #FF9500;
+    color: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    padding-left: 25px;
+    padding-right: 25px;
+    
+}
+
+.btn-orange:hover {
+    background-color: #d17c04;
+    color: white;
+}
+
+#btn-2 {
+    margin-left: 15px;
 }
 
 @media(max-width: 1600px){

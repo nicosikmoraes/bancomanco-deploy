@@ -22,11 +22,44 @@
 
                <div class="carteira-body">
                     <h1 id="dinheiro">{{ dados.saldo }} R$</h1>
-                    <button class="btn btn-custom" type="submit">Adicionar Fundos</button>
+                    <button class="btn btn-custom" type="button" data-bs-toggle="modal" data-bs-target="#deposito">
+                        Adicionar Fundos
+                    </button>
                </div>
-               
+
+               <!-- Modal -->
+                <div class="modal fade" id="deposito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title texto-modal fs-5" id="exampleModalLabel">Adicionar Fundos:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <h5 class="texto-modal">Quanto deseja adicionar?</h5>
+                            <input type="number" class="form-control" id="input-modal" placeholder="R$" [(ngModel)]="valorDeposito" name="valorDeposito">
+                        </div>
+
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-modal" data-bs-dismiss="modal" (click)="deposito()" [disabled]="!valorDeposito">Confirmar</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                            
             </div>
 
-    </div>
+    </div> <!-- container-left -->
+
+    <div class="container-right">
+
+        <div class="normal-button">
+            <button type="button" class="btn btn-orange">Transferir</button>
+            <button type="button" class="btn btn-orange" id="btn-2">Investir</button>
+        </div>
+
+    </div>  <!-- container-right -->
 
 </div>
