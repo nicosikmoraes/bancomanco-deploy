@@ -23,14 +23,14 @@
                   <img src="../../assets/images/LogoBmBranco.png" style="display: inline-block;" id="imgLogoLogin">
                   <h5 class="card-title" style="display: inline-block; vertical-align: middle;">Entre na sua conta</h5>
                  
-                  <form class="form-card-login" #frm="ngForm"> <!-- ((ngSubmit)="" para chamar a função quando o botão for clicado) -->
+                  <form class="form-card-login" #frm="ngForm" (ngSubmit)="popularLogin(frm)"> <!-- ((ngSubmit)="" para chamar a função quando o botão for clicado) -->
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="inputCpf" placeholder="Cpf" mask="000.000.000-00">
+                                <input type="text" class="form-control" id="inputCpf" placeholder="Cpf" mask="000.000.000-00" name="cpf" ngModel>
                                 <label for="inputCpf">Digite seu CPF</label>
                              </div>  
 
                              <div class="form-floating" id="inputSenhaContainer">
-                                <input type="password" class="form-control" id="inputSenha" placeholder="Senha">
+                                <input type="password" class="form-control" id="inputSenha" placeholder="Senha" name="senha" ngModel>
                                 <label for="inputSenha">Digite sua senha</label>
                              </div>     
                              

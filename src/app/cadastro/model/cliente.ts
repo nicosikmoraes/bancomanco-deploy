@@ -5,5 +5,5 @@ export default class Cliente {
     public dataNascimento!: number;
     public email!: string;
     public senha!: string;
-
+    public saldo: number = 0.00;
 }

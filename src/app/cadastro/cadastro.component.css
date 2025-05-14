@@ -78,6 +78,13 @@ h1 {
     box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.3);
 }
 
+.btn-custom:hover {
+    background-color: #303c58;
+    color: white;
+    border: none;
+    transform: scale(1.035);
+}
+
 @media(max-width: 1300px){
 
     .form-control {

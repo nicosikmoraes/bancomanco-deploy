@@ -1,0 +1,148 @@
+/* Containers */
+.container-body {
+    display: flex;
+    padding: 0;   
+    margin: 0;
+    width: 100%;
+
+}
+
+.container-left {
+    width: 55%;
+    height: 100vh;
+    background-color: #F5F2F2;
+}
+
+/* Mensagem de boas vindas */
+#welcome-text{
+    margin-top: 160px;
+    margin-left: 18vw;
+    color: #405380;
+    font-weight: bolder;
+}
+
+
+/* Card do saldo */
+.dropdown {
+     margin-left: 76%;
+}
+
+.dropdown-custom {
+    left: 100%
+}
+
+#button-dropdown {
+    border: none;
+    background-color: #fff;
+    width: 20px;
+    height: 40px;
+}
+
+.carteira {
+    background-color: #FFFFFF;
+    height: 20vh;
+    width: 30vw;
+    margin-top: 20px;
+    margin-left: 18vw;
+    border-radius: 12px;
+    box-shadow: 0 5px 6px -2px rgba(0, 0, 0, 0.3);
+}
+
+h3 {
+    color: #405380;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 25px;
+}
+
+.carteira-head {
+    margin-top: 0px;
+    display: flex;
+
+}
+
+
+#dots-carteira {
+    font-size: 28px;
+    margin-top: 16px;
+    margin-left: 76%;
+}
+
+#dinheiro {
+    font-size: 40px;
+    color: #405380;
+    font-weight: 600;
+    margin-top: 7px;
+    margin-left: 25px;
+}
+
+.btn-custom {
+    margin-top: 4px;
+    background-color: #405380;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 16px;
+    height: 48px;
+    width: 170px;
+    border: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+    margin-left: 20px;
+}
+
+.btn-custom:hover {
+    background-color: #303c58;
+    color: white;
+    border: none;
+    transform: scale(1.035);
+}
+
+@media(max-width: 1600px){
+    .dropdown{
+        margin-left: 64%;
+    }
+
+    .carteira-head {
+        width: 100%;
+    }
+}  
+
+@media(max-width: 1090px){
+   .dropdown{
+        margin-left: 50%;
+    }
+  }
+
+  @media(max-width: 774px){
+    .dropdown{
+        margin-left: 37%;
+    }
+  }
+
+
+  /* Design Celular */
+    @media(max-width: 700px){ /* Aqui muda o design para telemóvel*/
+
+    .container-left {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .carteira {
+        width: 70vw;
+        margin-top: 15px;
+    }
+
+    .dropdown{
+        margin-left: 70%;
+    }
+
+    @media (max-width: 540px){
+        .dropdown{
+            margin-left: 55%;
+        }
+    }
+  }

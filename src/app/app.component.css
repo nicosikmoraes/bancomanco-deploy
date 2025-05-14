@@ -56,6 +56,10 @@
     transform: scale(1.035)
 }
 
+#button-sair {
+    width: 70px;
+}
+
 @media (max-width: 1290px){
     .button-outline {
         margin-left: -40%;
@@ -84,9 +88,10 @@
     }
     
     #button-paginaInicial, #button-investimentos {
-        width: 120px;
+        width: 100px;
         font-size: 13px;
         height: 40px;
+        padding: 0px;
     }
 
     #nomeLogo {
@@ -96,9 +101,10 @@
 
 @media (max-width: 561px){
     #button-paginaInicial, #button-investimentos {
-        width: 100px;
+        width: 80px;
         font-size: 10px;
         height: 40px;
+        padding: 0px;
     }
 
     #nomeLogo {

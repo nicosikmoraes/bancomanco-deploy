@@ -1,2 +1,32 @@
-<p>banco-page works!</p><br><br><br><br><br><br><br><br>
-<span> {{ clienteNome }}</span>
+<div class="container-body">
+
+    <div class="container-left">
+
+        <h1 id="welcome-text">Bem Vindo {{ dados.nome }}</h1>
+
+            <div class="carteira">
+               <div class="carteira-head">
+                     <h3>Saldo:</h3>
+
+                       <div class="dropdown">
+                         <button type="button" data-bs-toggle="dropdown" aria-expanded="false" id="button-dropdown">
+                             <i class='bx bx-dots-vertical-rounded' style='color:#405380' id="dots-carteira" ></i>
+                         </button>
+                            <ul class="dropdown-menu dropdown-custom">
+                             <li><button type="button" class="dropdown-item" (click)="add1000()">Adicionar 1000R$</button></li>
+                             <li><button type="button" class="dropdown-item" (click)="sub1000()">Diminuir 1000R$</button></li>
+                            </ul>
+                         </div>
+
+               </div> 
+
+               <div class="carteira-body">
+                    <h1 id="dinheiro">{{ dados.saldo }} R$</h1>
+                    <button class="btn btn-custom" type="submit">Adicionar Fundos</button>
+               </div>
+               
+            </div>
+
+    </div>
+
+</div>

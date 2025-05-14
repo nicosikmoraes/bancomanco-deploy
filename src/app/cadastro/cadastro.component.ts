@@ -7,8 +7,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { CommonModule } from '@angular/common';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { DatabaseService } from '../services/database.service';
-import ICliente from './model/iCliente';
+import { ShareDataService } from '../services/share-data.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -28,41 +27,42 @@ import ICliente from './model/iCliente';
 
 export class CadastroComponent {
   cliente: Cliente = ClienteController.newCliente();
-  idCliente!: string;
-  nomeCliente!: string | undefined;
 
   constructor(private clienteService: ClienteService, 
-              private router: Router,
-              private databaseService: DatabaseService,       ){
-  }
+              private shareDataService: ShareDataService,
+              private router: Router      
+  ){}
+
 
   adicionarCliente(frmCadastro: NgForm){
+      //Adicionando clientes no db.json
     this.clienteService.adicionarCliente(this.cliente).subscribe(novo => {});
-      this.idCliente = this.cliente.id;
-      this.cliente = ClienteController.newCliente(); //Limpar o cadastro. (proavavelmente vou mudar isso aqui)
+
+      //Passando dados para banco-page
+    this.shareDataService.setDados({
+      id: this.cliente.id,
+      nome: this.cliente.nome,
+      cpf: this.cliente.cpf,
+      dataNascimento: this.cliente.dataNascimento,
+      email: this.cliente.email,
+      senha: this.cliente.senha,
+      saldo: this.cliente.saldo });
+      
+        //Limpar o cadastro e resetar this.cliente 
+      this.cliente = ClienteController.newCliente(); 
       frmCadastro.reset();
+
+       //Para mudar a navbar.
+      this.clienteService.bancoPage = true;
     
-    this.clienteService.bancoPage = true;
-    this.clienteService.goBancoPage();
-    this.clienteService.navbar = !this.clienteService.navbar;
+        //Mudar botão
+      this.clienteService.navbar = !this.clienteService.navbar;
 
-    this.encontraCliente(this.idCliente);
+        //Navegar para banco-page
+      this.router.navigate(['/banco-page'])
+
+
   }
-
-
-  encontraCliente(id: string){
-    this.databaseService.getClientes().subscribe((clientes: ICliente[]) => {
-        let cliente = clientes.find((c: ICliente) => c.id === id)
-        this.nomeCliente = cliente?.nome
-
-        this.passarDados()
-    })
-  }
-
-  passarDados(){
-    this.router.navigate(['/banco-page'], {queryParams: {"nomeCliente": this.nomeCliente}})
-  }
-
 
 }
 

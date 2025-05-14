@@ -5,4 +5,5 @@ export default interface ICliente {
      dataNascimento: number;
      email: string;
      senha: string;
+     saldo: number;
 }
