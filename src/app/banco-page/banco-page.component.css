@@ -110,6 +110,12 @@ h3 {
     }
 }  
 
+@media(max-height: 950px){
+    .carteira {
+        height: 23vh;
+    }
+}
+
 @media(max-width: 1090px){
    .dropdown{
         margin-left: 50%;
