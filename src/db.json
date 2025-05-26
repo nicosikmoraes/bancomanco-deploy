@@ -26,6 +26,24 @@
       "email": "ycrt@BUI",
       "senha": "LARALENA",
       "saldo": 4000
+    },
+    {
+      "id": "02e77a25-7357-4b56-97a7-91fd9e04918b",
+      "nome": "Nicolas Banqueta",
+      "cpf": "55555555555",
+      "dataNascimento": "05122001",
+      "email": "banqueta@gmail.com",
+      "senha": "banqueta",
+      "saldo": 3900
+    },
+    {
+      "id": "85694e18-d83d-4427-b35f-74f85a9fc1b3",
+      "nome": "Joao",
+      "cpf": "77777777777",
+      "dataNascimento": "16052006",
+      "email": "joao@gmail.com",
+      "senha": "123456",
+      "saldo": 1230
     }
   ]
 }
