@@ -20,14 +20,25 @@
 
                </div> 
 
-               <div class="carteira-body">
-                    <h1 id="dinheiro">{{ dados.saldo }} R$</h1>
+               <div class="carteira-body"> <!-- currency é um Pipe para formatar o dinheiro de acordo com a localização do usuário -->
+                    <h1 id="dinheiro">{{ dados.saldo | currency:'BRL'}}</h1>
                     <button class="btn btn-custom" type="button" data-bs-toggle="modal" data-bs-target="#deposito">
                         Adicionar Fundos
                     </button>
                </div>
 
-               <!-- Modal -->
+               <!-- Histórico de Pagamentos -->
+                <div class="historic">
+                
+                  <h2 id="text-historic">Atividade Recentes</h2>  
+                    <div class="historic-row" *ngFor="let transition of lastThreeTransitions">
+                        <img src="assets/icons/bank.png" style="height: 30px; width: 30px;">
+                        <span class="historic-row-message">{{ transition.message }}</span>
+                    </div>
+
+                </div> <!-- historic end -->
+
+               <!-- Modal Deposito -->
                 <div class="modal fade" id="deposito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                     <div class="modal-content">
@@ -44,6 +55,28 @@
                         <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-modal" data-bs-dismiss="modal" (click)="deposito()" [disabled]="!valorDeposito">Confirmar</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Modal Sacar -->
+                <div class="modal fade" id="saque" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title texto-modal fs-5" id="exampleModalLabel">Sacar Fundos:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <h5 class="texto-modal">Quanto deseja Retirar?</h5>
+                            <input type="number" class="form-control" id="input-modal" placeholder="R$" [(ngModel)]="valorSaque" name="valorSaque">
+                        </div>
+
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-modal" data-bs-dismiss="modal" (click)="saque()" [disabled]="!valorSaque">Confirmar</button>
                         </div>
                     </div>
                     </div>
@@ -70,8 +103,8 @@
             </div>  
 
             <div id="iconeDois">
-                <div id="secondIcon">
-                    <img src="assets/icons/print-dollar.png" style="height: 38px; width: 38px;">
+                <div id="secondIcon" data-bs-toggle="modal" data-bs-target="#saque">
+                    <img src="assets/icons/currency-note.png" style="height: 38px; width: 38px;">
                 </div>
                 <p id="secondIconText"> Sacar </p>
             </div>

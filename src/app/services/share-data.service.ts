@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ShareDataService {
   private dados: any;
+  private transitions: any[] = [];
 
   constructor() { }
 
@@ -15,4 +16,5 @@ export class ShareDataService {
   getDados(){
     return this.dados;
   }
+
 }

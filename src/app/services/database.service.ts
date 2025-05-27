@@ -12,7 +12,8 @@ import { ClienteService } from './cliente.service';
 export class DatabaseService {
   private api = 'http://localhost:3000/clientes';
 
-  constructor(private http: HttpClient, private router: Router,
+  constructor(private http: HttpClient,
+              private router: Router,
               private shareDataService: ShareDataService,
               private clienteService: ClienteService
   ) {}

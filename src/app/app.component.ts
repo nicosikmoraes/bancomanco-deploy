@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
-import { HomePageComponent } from './home-page/home-page.component';
 import { Router } from '@angular/router';
 import { ClienteService } from './services/cliente.service';
 import { DatabaseService } from './services/database.service';
+ 
 
 @Component({
   selector: 'app-root',
@@ -13,13 +13,17 @@ import { DatabaseService } from './services/database.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
+
 export class AppComponent implements OnInit{
   title = 'bancomanco';
   clientes: any[] = [];
 
+
   constructor( private clienteService: ClienteService, 
                private router: Router,
                private databaseService: DatabaseService) {}
+
 
   ngOnInit(): void {
     this.router.navigate(['/home-page']);
