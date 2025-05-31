@@ -31,10 +31,12 @@ export class BancoPageComponent implements OnInit{
   valorDeposito: number | null = null;
   valorSaque: number = 0;
 
+  /* Dados usados no histórico */
   transition!: Transition;
   transitionsData: null | any[] = [];
   lastThreeTransitions: ITransitions[] = [];
 
+  /* Dados usados no componente de transferência */
   cpfTransferido: string = ''
   valorTransferido: number = 0
 
@@ -120,13 +122,15 @@ export class BancoPageComponent implements OnInit{
 
     this.valorSaque = 0;
 
-        //Atualizando o históric
+        //Atualizando o histórico
         this.getHistoric();
         this.getHistoric();
     } 
   };
 
+  /* Chama a  função de tranferência */
   transferir(frm: NgForm){  
+    /* Vejo se tenho saldo suficiente na minha conta para fazer a transação */
     if(this.dados.saldo < this.valorTransferido){
       alert("Saldo Insuficiente")
     } else {
@@ -136,30 +140,37 @@ export class BancoPageComponent implements OnInit{
     this.cpfTransferido = '';
     this.valorTransferido = 0;
 
+    /* Reseto o formulário */
     frm.reset()
   }
 
   getTransferirConta(cpf: string, valor: number){
+    /* Pego a conta que o dinheiro vai ser transferido */
       this.databaseService.getClientes().subscribe((clientes: ICliente[]) => {
       const contaEncontrada = clientes.find((c: ICliente) => c.cpf === cpf);
 
+    /* Vejo se essa conta existe para continuar */
       if(!contaEncontrada){
         alert("Conta não encontrada")
       }else{
         console.log("Conta encontrada ->",contaEncontrada);
 
+        /* Atualizo os novos valore do saldo no banco de dados, chamando o updataDatabase */
            this.dados.saldo = this.dados.saldo - valor;
            const saldoConta2 = contaEncontrada.saldo + valor;
                this.updateDatabase(this.dados.id, this.dados.saldo);
                this.updateDatabase(contaEncontrada.id, saldoConta2);
 
+        /* Mensagem de Transferido para o histórico */
         this.transition.message = `Transferido: -R$${valor}`;
         this.transitionService.addTransition(this.transition).subscribe((transition) => {
           console.log("Mensagem Transferido",transition);
         });
 
+        /* Crio uma nova mensagem, mas dessa vez para a conta que será transferido o dinheiro */
         this.transition = TransitionController.newTransition(contaEncontrada.id);
 
+        /* Mensagem de recebido da outra conta */
         this.transition.message = `Recebido: +R$${valor}`;
         this.transitionService.addTransition(this.transition).subscribe((transition) => {
           console.log("Mensagem Recebido",transition);
@@ -167,7 +178,7 @@ export class BancoPageComponent implements OnInit{
 
           this.transition = TransitionController.newTransition(this.dados.id);
 
-            //Atualizando o históric
+            /* Atualizo o histórico de transferência da conta logada */
             this.getHistoric();
             this.getHistoric();
           }

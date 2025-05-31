@@ -90,11 +90,13 @@
                         <h1 class="modal-title texto-modal fs-5" id="exampleModalLabel">Transferir:</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-
+                    
+                        <!-- Formulário Transferir -->
                     <form #frm="ngForm" (ngSubmit)="transferir(frm)">
                         <div class="modal-body">
-                                <h5 class="texto-modal">CPF:</h5>
+                          <h5 class="texto-modal">CPF:</h5>
                             <input type="text" class="form-control modal-transferir" id="input-modal" placeholder="000.000.000-00" mask="000.000.000-00" required minlength="11" #cpfTras="ngModel" [(ngModel)]="cpfTransferido" name="cpfTransferido">
+                            <!-- Mensagem de erro se o CPF for inválido -->
                             <div class="cpf-invalid" *ngIf="cpfTras.invalid && cpfTras.touched">
                                 <p>CPF Inválido</p>
                             </div>

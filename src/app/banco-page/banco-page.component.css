@@ -185,6 +185,7 @@ h3 {
     margin-left: 7px;
 }
 
+/* Mensagem de erro se o CPF for inválido */
 .cpf-invalid p {
     font-size: 0.8em;
     color: red;
