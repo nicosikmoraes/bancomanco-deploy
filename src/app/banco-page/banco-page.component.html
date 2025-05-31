@@ -81,6 +81,36 @@
                     </div>
                     </div>
                 </div>
+
+                <!-- Modal Transferir -->
+                <div class="modal fade" id="transferir" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title texto-modal fs-5" id="exampleModalLabel">Transferir:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                    <form #frm="ngForm" (ngSubmit)="transferir(frm)">
+                        <div class="modal-body">
+                                <h5 class="texto-modal">CPF:</h5>
+                            <input type="text" class="form-control modal-transferir" id="input-modal" placeholder="000.000.000-00" mask="000.000.000-00" required minlength="11" #cpfTras="ngModel" [(ngModel)]="cpfTransferido" name="cpfTransferido">
+                            <div class="cpf-invalid" *ngIf="cpfTras.invalid && cpfTras.touched">
+                                <p>CPF Inválido</p>
+                            </div>
+
+                            <h5 class="texto-modal">Valor</h5>
+                            <input type="number" class="form-control" id="input-modal" placeholder="R$" [(ngModel)]="valorTransferido" name="valorTransferido" required>            
+                        </div>
+
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-modal" data-bs-dismiss="modal" [disabled]="!frm.valid">Confirmar</button>
+                        </div>
+                    </form>
+                    </div>
+                    </div>
+                </div>
                             
             </div>
 
@@ -89,7 +119,7 @@
     <div class="container-right">
 
         <div class="normal-button">
-            <button type="button" class="btn btn-orange">Transferir</button>
+            <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#transferir">Transferir</button>
             <button type="button" class="btn btn-orange" id="btn-2">Investir</button>
         </div>
 

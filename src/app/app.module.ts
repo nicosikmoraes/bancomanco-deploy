@@ -13,8 +13,7 @@ registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
-    AppComponent,
-    BancoPageComponent,
+
   ],
 
   imports: [
@@ -25,7 +24,7 @@ registerLocaleData(localePt);
     { provide: LOCALE_ID, useValue: 'pt-BR' }
   ],
 
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
 
 
