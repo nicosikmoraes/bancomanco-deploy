@@ -21,7 +21,7 @@
                </div> 
 
                <div class="carteira-body"> <!-- currency é um Pipe para formatar o dinheiro de acordo com a localização do usuário -->
-                    <h1 id="dinheiro">{{ dados.saldo | currency:'BRL'}}</h1>
+                    <h1 id="dinheiro">{{ dados.saldo | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</h1>
                     <button class="btn btn-custom" type="button" data-bs-toggle="modal" data-bs-target="#deposito">
                         Adicionar Fundos
                     </button>

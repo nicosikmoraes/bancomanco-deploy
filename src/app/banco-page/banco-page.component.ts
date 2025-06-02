@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ShareDataService } from '../services/share-data.service';
 import { ClienteService } from '../services/cliente.service';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import Transition from './model/transition';
 import TransitionController from './controller/transitionController';
@@ -17,7 +17,7 @@ import ICliente from '../cadastro/model/iCliente';
   selector: 'app-banco-page',
   imports: [FormsModule,
             CommonModule,
-            NgxMaskDirective
+            NgxMaskDirective, CurrencyPipe
   ],
     providers: [provideNgxMask()],
   templateUrl: './banco-page.component.html',
@@ -64,11 +64,12 @@ export class BancoPageComponent implements OnInit{
       
         //Update Database
       this.clienteService.atualizarCliente(id, dadosParcial).subscribe({
-          next: res => console.log('Usuário atualizado:', res),
+          next: res => this.getHistoric(), //Atualiza o histórico de transações.
           error: err => console.error('Erro ao atualizar:', err)
     });
     }
 
+    //Funções do 3 Pontos da carteira.
   add1000(){
     this.dados.saldo = this.dados.saldo + 1000;
       this.updateDatabase(this.dados.id, this.dados.saldo);
@@ -97,9 +98,6 @@ export class BancoPageComponent implements OnInit{
     this.transition = TransitionController.newTransition(this.dados.id);
     this.valorDeposito = null;
 
-        //Atualizando o histórico
-        this.getHistoric();
-        this.getHistoric();
   };
 
   saque(){
@@ -122,9 +120,6 @@ export class BancoPageComponent implements OnInit{
 
     this.valorSaque = 0;
 
-        //Atualizando o histórico
-        this.getHistoric();
-        this.getHistoric();
     } 
   };
 
@@ -152,7 +147,7 @@ export class BancoPageComponent implements OnInit{
     /* Vejo se essa conta existe para continuar */
       if(!contaEncontrada){
         alert("Conta não encontrada")
-      }else{
+      } else {
         console.log("Conta encontrada ->",contaEncontrada);
 
         /* Atualizo os novos valore do saldo no banco de dados, chamando o updataDatabase */
@@ -178,14 +173,12 @@ export class BancoPageComponent implements OnInit{
 
           this.transition = TransitionController.newTransition(this.dados.id);
 
-            /* Atualizo o histórico de transferência da conta logada */
-            this.getHistoric();
-            this.getHistoric();
           }
     })
   }
 
 
+  // Para atualizar o histórico quando alguma transação for realizada. 
   getHistoric(){
     this.transitionService.getTransitions().subscribe((historico: ITransitions[]) =>{
       const filtrado = historico.filter((t: ITransitions) => t.id === this.dados.id);
