@@ -11,7 +11,7 @@ import ITransitions from '../interface/ITransitions';
 import { NgForm } from '@angular/forms';
 import { DatabaseService } from '../services/database.service';
 import ICliente from '../cadastro/model/iCliente';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-banco-page',
@@ -81,7 +81,11 @@ export class BancoPageComponent implements OnInit{
              this.dados.saldo = this.dados.saldo - 1000;
                this.updateDatabase(this.dados.id, this.dados.saldo);
       }else{
-        alert("Sem saldo suficiente")
+          Swal.fire({
+            title: "Oops...",
+            text: "Sem saldo suficiente",
+            icon: "warning",
+        });
       }
   }
 
@@ -103,7 +107,11 @@ export class BancoPageComponent implements OnInit{
   saque(){
 
     if((this.dados.saldo - this.valorSaque) < 0){
-      alert("Saldo insuficiente");
+      Swal.fire({
+        title: "Oops...",
+        text: "Sem saldo suficiente",
+        icon: "warning",
+    });
       this.valorSaque = 0;
     }else{
 
@@ -127,7 +135,11 @@ export class BancoPageComponent implements OnInit{
   transferir(frm: NgForm){  
     /* Vejo se tenho saldo suficiente na minha conta para fazer a transação */
     if(this.dados.saldo < this.valorTransferido){
-      alert("Saldo Insuficiente")
+      Swal.fire({
+        title: "Oops...",
+        text: "Sem saldo suficiente",
+        icon: "warning",
+      });
     } else {
       this.getTransferirConta(this.cpfTransferido, this.valorTransferido)
     }
@@ -146,7 +158,11 @@ export class BancoPageComponent implements OnInit{
 
     /* Vejo se essa conta existe para continuar */
       if(!contaEncontrada){
-        alert("Conta não encontrada")
+        Swal.fire({
+          title: "Oops...",
+          text: "Conta não encontrada",
+          icon: "warning",
+      });
       } else {
         console.log("Conta encontrada ->",contaEncontrada);
 

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { ShareDataService } from './share-data.service';
 import ICliente from '../cadastro/model/iCliente';
 import { ClienteService } from './cliente.service';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -53,7 +54,11 @@ export class DatabaseService {
                   }else{
                     // Resposta se não achar nenhuma conta
                   console.log("Not Found", clienteEncontrado)
-                  alert("Senha ou CPF incorretos!")
+                  Swal.fire({
+                    title: "Oops...",
+                    text: "CPF ou Senha incorretos!",
+                    icon: "error",
+                  });
                   }
             })
     }
