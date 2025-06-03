@@ -61,7 +61,7 @@
       "dataNascimento": "12165123",
       "email": "nicolara@gmail.com",
       "senha": "16052006",
-      "saldo": 10024
+      "saldo": 10049
     }
   ],
   "pagamentos": [
@@ -344,6 +344,14 @@
     {
       "id": "67eea7d8-43d7-407f-ae7d-8f5d276ee66e",
       "message": "Depositado: +R$232"
+    },
+    {
+      "id": "67eea7d8-43d7-407f-ae7d-8f5d276ee66e",
+      "message": "Depositado: +R$55"
+    },
+    {
+      "id": "67eea7d8-43d7-407f-ae7d-8f5d276ee66e",
+      "message": "Sacado: -R$30"
     }
   ]
 }

@@ -123,7 +123,7 @@ h3 {
 }
 
 .historic-row-message {
-    font-size: 21px;
+    font-size: clamp(18px, 2vw, 21px);
     color: #fff;
     font-weight: 565;
     margin-left: 18px;
@@ -297,25 +297,60 @@ input.ng-touched.ng-invalid {
 
 
   /* Design Celular */
-    @media(max-width: 700px){ /* Aqui muda o design para telemóvel*/
+    @media(max-width: 900px){ /* Aqui muda o design para telemóvel*/
+/*============================= Containers ================================*/
+        .container-body {
+        display: flex;
+        flex-direction: column;
+    }
+
 
     .container-left {
         width: 100%;
-        height: 100vh;
+        min-height: 105vh;
     }
 
+    .container-right {
+        position: relative;
+        background-color:  #F5F2F2;
+        width: 100%;
+        min-height: 220px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /*============================= Carteira ================================*/
     .carteira {
         width: 70vw;
         margin-top: 15px;
+        height: 26vh;
     }
 
     .dropdown{
         margin-left: 70%;
     }
 
-    @media (max-width: 540px){
-        .dropdown{
-            margin-left: 55%;
-        }
+    .historic {
+        margin-top: 60px;
     }
+ /*============================= Container de Baixo ================================*/
+ .normal-button {
+    margin-top: 13px;
+    margin-left: 0px;
+    height: 50px;
+}
+
+.container-icons {
+    height: 130px;
+    margin-top: 13px;
+    margin-left: 0px;
+}
+
   }
+
+  @media (max-width: 540px){
+    .dropdown{
+        margin-left: 55%;
+    }
+}

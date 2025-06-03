@@ -100,12 +100,19 @@
 }
 
 @media (max-width: 561px){
-    #button-paginaInicial, #button-investimentos {
-        width: 80px;
-        font-size: 10px;
+ #button-investimentos {
+        width: 115px;
+        font-size: 14px;
         height: 40px;
         padding: 0px;
     }
+
+#button-paginaInicial {
+    width: 70px;
+    font-size: 14px;
+    height: 40px;
+    padding: 0px;
+}
 
     #nomeLogo {
         font-size: 16px;
