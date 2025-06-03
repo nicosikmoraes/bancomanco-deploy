@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
-import { BrowserModule } from '@angular/platform-browser';
 import { DatabaseService } from '../services/database.service';
-import ICliente from '../cadastro/model/iCliente';
-import { ShareDataService } from '../services/share-data.service';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home-page',

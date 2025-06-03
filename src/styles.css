@@ -2,6 +2,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #FFFEFA;
+  box-sizing: border-box;
 }
 
 ml-05 {

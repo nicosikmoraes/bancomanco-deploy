@@ -45,6 +45,7 @@ export class AppComponent implements OnInit{
 
   public sairHomePage(){
     this.clienteService.bancoPage = false;
+    this.databaseService.logout();
   }
 
     //Método para mostrar banco de dados no console, e inserir ele em uma váriavel local para eu poder manusear. (Vai mudar de lugar este método, está aqui só para testes.)

@@ -11,6 +11,7 @@ import { ClienteService } from './cliente.service';
 })
 export class DatabaseService {
   private api = 'http://localhost:3000/clientes';
+  protected autenticado = false;
 
   constructor(private http: HttpClient,
               private router: Router,
@@ -43,6 +44,9 @@ export class DatabaseService {
 
                       //Para mudar a navbar.
                     this.clienteService.bancoPage = true;
+                      
+                     //Para ativar a autenticação de rotas
+                    this.autenticado = true;
 
                       // Vou para banco-page                              
                     this.router.navigate(['/banco-page'])
@@ -52,6 +56,14 @@ export class DatabaseService {
                   alert("Senha ou CPF incorretos!")
                   }
             })
+    }
+
+    public isAutenticado(): boolean {
+        return this.autenticado;
+    }
+
+    public logout(){
+      this.autenticado = false;
     }
    
 }
