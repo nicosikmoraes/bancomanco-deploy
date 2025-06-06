@@ -46,15 +46,6 @@
       "saldo": 1230
     },
     {
-      "id": "342b4c00-9613-4dc4-afab-06a72e3a83eb",
-      "nome": "Sucu do Lento",
-      "cpf": "99999999999",
-      "dataNascimento": "12308610",
-      "email": "suco123@gmail.com",
-      "senha": "16052006",
-      "saldo": 2523
-    },
-    {
       "id": "67eea7d8-43d7-407f-ae7d-8f5d276ee66e",
       "nome": "Nico Lara",
       "cpf": "45555555555",
@@ -62,87 +53,6 @@
       "email": "nicolara@gmail.com",
       "senha": "16052006",
       "saldo": 12400
-    },
-    {
-      "id": "3ebb887c-402b-4a23-b8cc-194f17f5e796",
-      "nome": "NicoMain",
-      "cpf": "12345678900",
-      "dataNascimento": "12308610",
-      "email": "nicolas.moraes.ns@gmail.com",
-      "senha": "16052006",
-      "saldo": 0
-    },
-    {
-      "id": "10ce4883-7935-430a-a76b-784c50208991",
-      "nome": "nicomain",
-      "cpf": "12345678900",
-      "dataNascimento": "12308610",
-      "email": "nicolas.moraes.ns@gmail.com",
-      "senha": "1605200",
-      "saldo": 0
-    },
-    {
-      "id": "7aa873d8-9be8-492a-b4ee-45aec6e7c6f3",
-      "nome": "NicoMain",
-      "cpf": "12345678900",
-      "dataNascimento": "16052006",
-      "email": "nicolasmoraes@alunos.utfpr.edu.br",
-      "senha": "16052006",
-      "saldo": 1200
-    },
-    {
-      "id": "6b41c936-15a2-45b5-ae33-8849b2a9492b",
-      "nome": "jaFeito",
-      "cpf": "22222222222",
-      "dataNascimento": "16052006",
-      "email": "nicolas.moraes.ns@gmail.com",
-      "senha": "feitos",
-      "saldo": 0
-    },
-    {
-      "id": "439913bd-4c6b-4dfc-9200-bc439e2db777",
-      "nome": "sadasd",
-      "cpf": "22222222222",
-      "dataNascimento": "12308610",
-      "email": "nicolasmoraes@alunos.utfpr.edu.br",
-      "senha": "asdasd",
-      "saldo": 0
-    },
-    {
-      "id": "1b1b9056-7e82-47ce-a679-c74e95f90bd1",
-      "nome": "dsadad2",
-      "cpf": "22222222222",
-      "dataNascimento": "13213123",
-      "email": "asdadsad@dsa",
-      "senha": "adadasda",
-      "saldo": 0
-    },
-    {
-      "id": "0bda0b64-0cca-4a5f-8cab-b9d6b19bebb0",
-      "nome": "asdadasdadsa",
-      "cpf": "32343423243",
-      "dataNascimento": "32131312",
-      "email": "21313@dsada",
-      "senha": "31231321",
-      "saldo": 0
-    },
-    {
-      "id": "92f42901-0d38-45a0-b2c7-d0c87b7e4cb0",
-      "nome": "adasda",
-      "cpf": "22222222222",
-      "dataNascimento": "12313131",
-      "email": "312312321@sad",
-      "senha": "1231231",
-      "saldo": 0
-    },
-    {
-      "id": "4e3e97cc-3f54-4fff-8bdd-2e0b09aaf461",
-      "nome": "nova conta",
-      "cpf": "54545454545",
-      "dataNascimento": "16052006",
-      "email": "novaconta@gmail.com",
-      "senha": "123456",
-      "saldo": 2300
     }
   ],
   "pagamentos": [
