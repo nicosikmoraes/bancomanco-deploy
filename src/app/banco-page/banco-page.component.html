@@ -1,0 +1,146 @@
+<div class="container-body">
+
+    <div class="container-left">
+
+        <h1 id="welcome-text">Bem Vindo {{ dados.nome }}</h1>
+
+            <div class="carteira">
+               <div class="carteira-head">
+                     <h3>Saldo:</h3>
+
+                       <div class="dropdown">
+                         <button type="button" data-bs-toggle="dropdown" aria-expanded="false" id="button-dropdown">
+                             <i class='bx bx-dots-vertical-rounded' style='color:#405380' id="dots-carteira" ></i>
+                         </button>
+                            <ul class="dropdown-menu dropdown-custom">
+                             <li><button type="button" class="dropdown-item" (click)="add1000()">Adicionar 1000R$</button></li>
+                             <li><button type="button" class="dropdown-item" (click)="sub1000()">Diminuir 1000R$</button></li>
+                            </ul>
+                         </div>
+
+               </div> 
+
+               <div class="carteira-body"> <!-- currency é um Pipe para formatar o dinheiro de acordo com a localização do usuário -->
+                    <h1 id="dinheiro">{{ dados.saldo | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</h1>
+                    <button class="btn btn-custom" type="button" data-bs-toggle="modal" data-bs-target="#deposito">
+                        Adicionar Fundos
+                    </button>
+               </div>
+
+               <!-- Histórico de Pagamentos -->
+                <div class="historic">
+                
+                  <h2 id="text-historic">Atividade Recentes</h2>  
+                    <div class="historic-row" *ngFor="let transition of lastThreeTransitions">
+                        <img src="assets/icons/bank.png" style="height: 30px; width: 30px;">
+                        <span class="historic-row-message">{{ transition.message }}</span>
+                    </div>
+
+                </div> <!-- historic end -->
+
+               <!-- Modal Deposito -->
+                <div class="modal fade" id="deposito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title texto-modal fs-5" id="exampleModalLabel">Adicionar Fundos:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <h5 class="texto-modal">Quanto deseja adicionar?</h5>
+                            <input type="number" class="form-control" id="input-modal" placeholder="R$" [(ngModel)]="valorDeposito" name="valorDeposito">
+                        </div>
+
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-modal" data-bs-dismiss="modal" (click)="deposito()" [disabled]="!valorDeposito">Confirmar</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Modal Sacar -->
+                <div class="modal fade" id="saque" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title texto-modal fs-5" id="exampleModalLabel">Sacar Fundos:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <h5 class="texto-modal">Quanto deseja Retirar?</h5>
+                            <input type="number" class="form-control" id="input-modal" placeholder="R$" [(ngModel)]="valorSaque" name="valorSaque">
+                        </div>
+
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-modal" data-bs-dismiss="modal" (click)="saque()" [disabled]="!valorSaque">Confirmar</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Modal Transferir -->
+                <div class="modal fade" id="transferir" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title texto-modal fs-5" id="exampleModalLabel">Transferir:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    
+                        <!-- Formulário Transferir -->
+                    <form #frm="ngForm" (ngSubmit)="transferir(frm)">
+                        <div class="modal-body">
+                          <h5 class="texto-modal">CPF:</h5>
+                            <input type="text" class="form-control modal-transferir" id="input-modal" placeholder="000.000.000-00" mask="000.000.000-00" required minlength="11" #cpfTras="ngModel" [(ngModel)]="cpfTransferido" name="cpfTransferido">
+                            <!-- Mensagem de erro se o CPF for inválido -->
+                            <div class="cpf-invalid" *ngIf="cpfTras.invalid && cpfTras.touched">
+                                <p>CPF Inválido</p>
+                            </div>
+
+                            <h5 class="texto-modal">Valor</h5>
+                            <input type="number" class="form-control" id="input-modal" placeholder="R$" [(ngModel)]="valorTransferido" name="valorTransferido" required>            
+                        </div>
+
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-modal" data-bs-dismiss="modal" [disabled]="!frm.valid">Confirmar</button>
+                        </div>
+                    </form>
+                    </div>
+                    </div>
+                </div>
+                            
+            </div>
+
+    </div> <!-- container-left -->
+
+    <div class="container-right">
+
+        <div class="normal-button">
+            <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#transferir">Transferir</button>
+        </div>
+
+        <div class="container-icons">
+
+            <div id="iconeUm">  
+                <div id="firstIcon" data-bs-toggle="modal" data-bs-target="#deposito">
+                <img src="assets/icons/print-dollar.png" style="height: 38px; width: 38px;">
+                </div>
+                <p id="firstIconText"> Depositar </p>
+            </div>  
+
+            <div id="iconeDois">
+                <div id="secondIcon" data-bs-toggle="modal" data-bs-target="#saque">
+                    <img src="assets/icons/currency-note.png" style="height: 38px; width: 38px;">
+                </div>
+                <p id="secondIconText"> Sacar </p>
+            </div>
+      </div> 
+
+    </div>  <!-- container-right -->
+
+</div>
