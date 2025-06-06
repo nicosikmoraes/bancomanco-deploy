@@ -7,7 +7,7 @@
       "dataNascimento": "16052005",
       "email": "saldo@gmailcom",
       "senha": "saldos",
-      "saldo": 13494
+      "saldo": 13644
     },
     {
       "id": "b9922c07-314a-4ff7-be55-507780510b8b",
@@ -53,6 +53,15 @@
       "email": "nicolara@gmail.com",
       "senha": "16052006",
       "saldo": 12400
+    },
+    {
+      "id": "e5cb6df8-b462-4170-8c80-290316b568e7",
+      "nome": "Nicolas Fotos",
+      "cpf": "23023023023",
+      "dataNascimento": "16052006",
+      "email": "nicolas.moraes.ns@gmail.com",
+      "senha": "160506",
+      "saldo": 1350
     }
   ],
   "pagamentos": [
@@ -407,6 +416,22 @@
     {
       "id": "d281afe9-92ca-4750-9455-cc1aacf6a8c9",
       "message": "Recebido: +R$100"
+    },
+    {
+      "id": "e5cb6df8-b462-4170-8c80-290316b568e7",
+      "message": "Depositado: +R$2000"
+    },
+    {
+      "id": "e5cb6df8-b462-4170-8c80-290316b568e7",
+      "message": "Sacado: -R$500"
+    },
+    {
+      "id": "e5cb6df8-b462-4170-8c80-290316b568e7",
+      "message": "Transferido: -R$150"
+    },
+    {
+      "id": "d281afe9-92ca-4750-9455-cc1aacf6a8c9",
+      "message": "Recebido: +R$150"
     }
   ]
 }
